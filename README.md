@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 
 ## **Project Structure:**
-## 📑 Project Files Overview
+## Project Files Overview
 
 | File/Folder           | Description                                      |
 |-----------------------|--------------------------------------------------|
@@ -75,8 +75,6 @@ pip install -r requirements.txt
       CSV_FOLDER=C:/Projects/EcommerceProject/Data
 
 ## **Common Errors & Fixes:**
-## 🔧 Common Errors & Fixes
-
 | ❌ Error | ✅ Fix |
 |----------|--------|
 | **Cannot connect using SQL Authentication** | - Enable **TCP/IP** in SQL Server Configuration Manager <br> - Ensure **SQL Authentication mode** is enabled <br> - Use correct connection string:<br>`mssql+pyodbc://USERNAME:PASSWORD@SERVER/DATABASE?driver=ODBC+Driver+17+for+SQL+Server` |
