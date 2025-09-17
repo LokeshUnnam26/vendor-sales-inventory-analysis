@@ -55,10 +55,10 @@ pip install -r requirements.txt
 ## **Project Structure:**
        sales-inventory/
        │── ingestion.py
-       │── aggTable.py
+       │── aggTableCreation.py
        │── logger_setup.py
        │── analysis.ipynb
-       │── exploringData.ipynb
+       │── aggTable.ipynb
        │── requirements.txt
        │── .env
        │── logs/
@@ -72,7 +72,7 @@ pip install -r requirements.txt
 | `aggTable.py`         | Creates aggregated tables for analysis           |
 | `logger_setup.py`     | Centralized logging setup for all scripts        |
 | `analysis.ipynb`      | Exploratory analysis & hypothesis testing        |
-| `exploringData.ipynb` | Initial data exploration and EDA                 |
+| `aggTable.ipynb` | Initial data exploration and EDA                 |
 | `requirements.txt`    | Python dependencies for the project              |
 | `.env`                | Environment variables (DB credentials, paths)    |
 | `logs/`               | Folder storing centralized log files             |
