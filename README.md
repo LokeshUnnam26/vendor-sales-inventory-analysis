@@ -16,7 +16,7 @@ The final insights are also consumed in Power BI dashboards.
 
 ## **Installation**
 1. Clone the repository
-git clone https://github.com/<your-username>/sales-inventory.git
+git clone https://github.com/your-username/sales-inventory.git
 cd sales-inventory
 
 2. Create a virtual environment
