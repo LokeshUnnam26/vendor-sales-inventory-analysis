@@ -1,7 +1,7 @@
 # **Sales & Inventory Project**
 
-This project is an end-to-end Sales & Inventory Data Pipeline and Analysis System.
-It covers data ingestion → database storage → aggregation → logging → exploratory analysis → visualization.
+- This project is an end-to-end Sales & Inventory Data Pipeline and Analysis System.
+- It covers data ingestion → database storage → aggregation → logging → exploratory analysis → visualization.
 
 The final insights are also consumed in Power BI dashboards.
  
@@ -53,15 +53,18 @@ pip install -r requirements.txt
 
 
 ## **Project Structure:**
-sales-inventory/
-│── ingestion.py        # Loads CSV into SQL Server
-│── aggTable.py         # Creates aggregated tables
-│── logger_setup.py     # Centralized logging
-│── analysis.ipynb      # Exploratory analysis & hypothesis testing
-│── exploringData.ipynb # Data exploration
-│── requirements.txt    # Dependencies
-│── .env                # Environment variables
-│── logs/               # Centralized logs folder
+## 📑 Project Files Overview
+
+| File/Folder           | Description                                      |
+|-----------------------|--------------------------------------------------|
+| `ingestion.py`        | Loads CSV files into SQL Server database         |
+| `aggTable.py`         | Creates aggregated tables for analysis           |
+| `logger_setup.py`     | Centralized logging setup for all scripts        |
+| `analysis.ipynb`      | Exploratory analysis & hypothesis testing        |
+| `exploringData.ipynb` | Initial data exploration and EDA                 |
+| `requirements.txt`    | Python dependencies for the project              |
+| `.env`                | Environment variables (DB credentials, paths)    |
+| `logs/`               | Folder storing centralized log files             |
 
 ## **Environment Variables (.env)**
       USERNAME=root
@@ -72,28 +75,17 @@ sales-inventory/
       CSV_FOLDER=C:/Projects/EcommerceProject/Data
 
 ## **Common Errors & Fixes:**
-1. ❌ Cannot connect using SQL Authentication
-✅ Fix: - Enable TCP/IP in SQL Server Configuration Manager
-        - Ensure SQL Authentication mode is enabled
+## 🔧 Common Errors & Fixes
 
-Use correct connection string: mssql+pyodbc://USERNAME:PASSWORD@SERVER/DATABASE?driver=ODBC+Driver+17+for+SQL+Server
+| ❌ Error | ✅ Fix |
+|----------|--------|
+| **Cannot connect using SQL Authentication** | - Enable **TCP/IP** in SQL Server Configuration Manager <br> - Ensure **SQL Authentication mode** is enabled <br> - Use correct connection string:<br>`mssql+pyodbc://USERNAME:PASSWORD@SERVER/DATABASE?driver=ODBC+Driver+17+for+SQL+Server` |
+| **Cannot drop database – “database in use”** | ```sql<br>ALTER DATABASE sales_inventory_db SET SINGLE_USER WITH ROLLBACK IMMEDIATE;<br>DROP DATABASE sales_inventory_db;<br>``` |
+| **pyodbc.InterfaceError (Error 28000)** | Incorrect authentication mode. Enable **SQL Server Authentication** as explained above. |
+| **TCP/IP not enabled** | Enable **TCP/IP** in SQL Server Configuration Manager → Restart SQL Server instance. |
+| **Dynamic Ports (port = 0)** | - Disable dynamic ports, set static port **1433** <br> - Add port in connection string if needed:<br>`SERVER=SERVER_NAME,1433` |
 
-2. ❌ Cannot drop database – “database in use”
-✅ Fix:
-        ALTER DATABASE sales_inventory_db SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-        DROP DATABASE sales_inventory_db;
 
-3. ❌ pyodbc.InterfaceError (Error 28000)
-✅ Fix: Incorrect authentication mode. Enable SQL Server Authentication as explained above.
-
-4. ❌ TCP/IP not enabled
-✅ Fix: Enable TCP/IP in SQL Server Configuration Manager → Restart instance.
-
-5. ❌ Dynamic Ports (port = 0)
-✅ Fix:
-      - Disable dynamic ports, set static port (1433).
-      - Add port in connection string if needed:
-      - SERVER=SERVER_NAME,1433
 
 ## **Analysis & Hypothesis Testing:**
 
@@ -107,5 +99,5 @@ Steps in analysis.ipynb:
 
 
 ## **Logging:**
-      - All scripts use a centralized logger
-      - Logs are saved inside /logs folder with timestamps
+   - All scripts use a centralized logger
+   - Logs are saved inside /logs folder with timestamps
