@@ -53,6 +53,17 @@ pip install -r requirements.txt
 
 
 ## **Project Structure:**
+       sales-inventory/
+       │── ingestion.py
+       │── aggTable.py
+       │── logger_setup.py
+       │── analysis.ipynb
+       │── exploringData.ipynb
+       │── requirements.txt
+       │── .env
+       │── logs/
+
+
 ## Project Files Overview
 
 | File/Folder           | Description                                      |
