@@ -4,7 +4,9 @@
 - It covers data ingestion → database storage → aggregation → logging → exploratory analysis → visualization.
 
 The final insights are also consumed in Power BI dashboards.
- 
+
+## **Dataset Link: ** 
+    [Dataset Link](https://drive.google.com/drive/folders/1aQvnWkdD1wsQG9FUMwO4mQyPCVx5tg5w?usp=sharing)
 ## **Features**
 
 - Centralized logging system **(logger_setup.py)**
@@ -77,6 +79,10 @@ pip install -r requirements.txt
 | `.env`                | Environment variables (DB credentials, paths)    |
 | `logs/`               | Folder storing centralized log files             |
 
+## **Dependencies Installation:**
+     Before running any scripts, install required packages from requirements.txt:
+     pip install -r requirements.txt
+
 ## **Environment Variables (.env)**
       USERNAME=root
       PASSWORD=your_password
@@ -106,7 +112,15 @@ Steps in analysis.ipynb:
    - Result: Reject H₀ → significant difference exists
    - P-value < 0.05
 
-
 ## **Logging:**
    - All scripts use a centralized logger
    - Logs are saved inside /logs folder with timestamps
+
+## **Power BI Dashboard**
+
+The aggregated SQL Server data is visualized in Power BI to track:  
+- **Sales Trends** – monitor growth and seasonality  
+- **Top Vendors** – identify high-performing suppliers  
+- **Low-Performing Vendors** – detect suppliers needing attention  
+- **Profit Margins** – analyze vendor profitability  
+- **Brands Requiring Promotion** – highlight underperforming brands for marketing focus  
